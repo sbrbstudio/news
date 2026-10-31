@@ -74,13 +74,16 @@ function getBody(source) {
 }
 
 async function loadArticles() {
-  const manifestResponse = await fetch("./content/articles.json");
+  const cacheVersion = Date.now();
+  const manifestResponse = await fetch(
+    `./content/articles.json?v=${cacheVersion}`,
+  );
   if (!manifestResponse.ok) throw new Error("无法载入文章目录");
   const articlePaths = await manifestResponse.json();
 
   const loaded = await Promise.all(
     articlePaths.map(async (path) => {
-      const response = await fetch(`./${path}`);
+      const response = await fetch(`./${path}?v=${cacheVersion}`);
       if (!response.ok) throw new Error(`无法载入 ${path}`);
       const source = await response.text();
       const metadata = parseFrontMatter(source);
@@ -98,7 +101,9 @@ async function loadArticles() {
 }
 
 async function loadCategories() {
-  const response = await fetch("./content/categories.json");
+  const response = await fetch(
+    `./content/categories.json?v=${Date.now()}`,
+  );
   if (!response.ok) throw new Error("无法载入分类配置");
   return response.json();
 }
