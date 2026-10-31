@@ -436,6 +436,7 @@ function bindControls() {
 
 async function initHome() {
   setCurrentDate();
+  window.setInterval(setCurrentDate, 60_000);
   try {
     [articles, categories] = await Promise.all([
       loadArticles(),

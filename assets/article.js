@@ -302,6 +302,7 @@ function bindShareButton(article) {
 
 async function initArticle() {
   setCurrentDate();
+  window.setInterval(setCurrentDate, 60_000);
   try {
     const slug = new URLSearchParams(window.location.search).get("slug");
     if (!slug) throw new Error("缺少文章编号");
