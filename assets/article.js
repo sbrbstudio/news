@@ -177,19 +177,30 @@ function splitTableRow(line) {
 }
 
 function renderTable(lines) {
-  if (lines.length < 2 || !lines[0].includes("|")) return null;
+  const separatorIndex = lines.findIndex((line, index) => {
+    if (index === 0 || !line.includes("|")) return false;
+    const cells = splitTableRow(line);
+    return cells.length > 0 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+  });
+  if (separatorIndex < 1) return null;
 
-  const separator = splitTableRow(lines[1]);
-  const isTable = separator.every((cell) => /^:?-{3,}:?$/.test(cell));
-  if (!isTable) return null;
+  const headerIndex = separatorIndex - 1;
+  if (!lines[headerIndex].includes("|")) return null;
 
-  const headerCells = splitTableRow(lines[0]);
-  const bodyRows = lines.slice(2).map(splitTableRow);
+  let tableEnd = separatorIndex + 1;
+  while (tableEnd < lines.length && lines[tableEnd].includes("|")) {
+    tableEnd += 1;
+  }
+
+  const beforeLines = lines.slice(0, headerIndex);
+  const afterLines = lines.slice(tableEnd);
+  const headerCells = splitTableRow(lines[headerIndex]);
+  const bodyRows = lines.slice(separatorIndex + 1, tableEnd).map(splitTableRow);
   const columnCount = headerCells.length;
   const normalizeRow = (row) =>
     Array.from({ length: columnCount }, (_, index) => row[index] || "");
 
-  return `
+  const tableHtml = `
     <div class="article-table-wrap">
       <table>
         <thead>
@@ -210,6 +221,15 @@ function renderTable(lines) {
       </table>
     </div>
   `;
+
+  const beforeHtml = beforeLines.length
+    ? `<p>${renderInline(beforeLines.join(" "))}</p>`
+    : "";
+  const afterHtml = afterLines.length
+    ? `<p>${renderInline(afterLines.join(" "))}</p>`
+    : "";
+
+  return `${beforeHtml}${tableHtml}${afterHtml}`;
 }
 
 function renderMarkdown(markdown) {
