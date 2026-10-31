@@ -123,12 +123,109 @@ function renderInline(text) {
   return html;
 }
 
+function renderImageBlock(line) {
+  const match = line.match(
+    /^!\[([^\]]*)\]\(([^\s)]+)(?:\s+"([^"]*)")?\)$/,
+  );
+  if (!match) return null;
+
+  const [, alt, url, title] = match;
+  const safeUrl = /^(https?:\/\/|\.\.?\/)/.test(url) ? url : "#";
+  const caption = title || alt;
+  return `
+    <figure class="article-inline-image">
+      <img src="${escapeHtml(safeUrl)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />
+      ${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ""}
+    </figure>
+  `;
+}
+
+function renderVideoBlock(line) {
+  const match = line.match(
+    /^@\[video\]\(([^\s)]+)(?:\s+"([^"]*)")?\)$/,
+  );
+  if (!match) return null;
+
+  const [, url, title] = match;
+  const safeUrl = /^(https?:\/\/|\.\.?\/)/.test(url) ? url : "#";
+  const extension = safeUrl.split("?")[0].split(".").pop().toLowerCase();
+  const mimeType =
+    extension === "webm"
+      ? "video/webm"
+      : extension === "ogv"
+        ? "video/ogg"
+        : "video/mp4";
+
+  return `
+    <figure class="article-video">
+      <video controls preload="metadata" playsinline>
+        <source src="${escapeHtml(safeUrl)}" type="${mimeType}" />
+        当前浏览器不支持播放这段视频。
+      </video>
+      ${title ? `<figcaption>${escapeHtml(title)}</figcaption>` : ""}
+    </figure>
+  `;
+}
+
+function splitTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+function renderTable(lines) {
+  if (lines.length < 2 || !lines[0].includes("|")) return null;
+
+  const separator = splitTableRow(lines[1]);
+  const isTable = separator.every((cell) => /^:?-{3,}:?$/.test(cell));
+  if (!isTable) return null;
+
+  const headerCells = splitTableRow(lines[0]);
+  const bodyRows = lines.slice(2).map(splitTableRow);
+  const columnCount = headerCells.length;
+  const normalizeRow = (row) =>
+    Array.from({ length: columnCount }, (_, index) => row[index] || "");
+
+  return `
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr>${normalizeRow(headerCells)
+            .map((cell) => `<th>${renderInline(cell)}</th>`)
+            .join("")}</tr>
+        </thead>
+        <tbody>
+          ${bodyRows
+            .map(
+              (row) =>
+                `<tr>${normalizeRow(row)
+                  .map((cell) => `<td>${renderInline(cell)}</td>`)
+                  .join("")}</tr>`,
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
 function renderMarkdown(markdown) {
   const blocks = markdown.trim().split(/\r?\n\r?\n/);
   return blocks
     .map((block) => {
       const lines = block.split(/\r?\n/);
       const first = lines[0].trim();
+      const image = renderImageBlock(first);
+      if (image) return image;
+
+      const video = renderVideoBlock(first);
+      if (video) return video;
+
+      const table = renderTable(lines);
+      if (table) return table;
 
       if (first.startsWith("### ")) {
         return `<h3>${renderInline(first.slice(4))}</h3>`;

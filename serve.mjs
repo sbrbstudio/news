@@ -13,9 +13,12 @@ const contentTypes = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".md": "text/markdown; charset=utf-8",
+  ".mp4": "video/mp4",
+  ".ogv": "video/ogg",
   ".png": "image/png",
   ".svg": "image/svg+xml",
   ".txt": "text/plain; charset=utf-8",
+  ".webm": "video/webm",
   ".webp": "image/webp",
 };
 
