@@ -1,12 +1,12 @@
 ---
 title: "午休铃之后，草坪一中的校园空地安静了下来"
 summary: "一块没有明确功能的空地，被学生重新分配成阅读、聊天和短暂独处的地方。"
-category: "education"
-category_label: "教育"
+category: "community"
+category_label: "社区"
 area: "尖草坪区/草坪一中"
 published_at: "2026-10-30T18:30:00+08:00"
-author: "沈一 / SBRB 编辑部"
-cover: "./assets/covers/campus-yard.svg"
+author: "SB日报工作室记者-1 / SBRB 编辑部"
+cover: "./assets/covers/cwds.png"
 cover_alt: "校园空地、长凳和学生的抽象编辑插画"
 caption: "示意图：没有固定用途的校园空地，也可能产生丰富活动。"
 featured: false

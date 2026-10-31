@@ -1,22 +1,14 @@
 [
   {
+    "id": "flat",
+    "label": "平面"
+  },
+  {
     "id": "community",
     "label": "社区"
   },
   {
-    "id": "education",
-    "label": "教育"
-  },
-  {
-    "id": "city",
-    "label": "城市"
-  },
-  {
-    "id": "life",
-    "label": "生活"
-  },
-  {
-    "id": "culture",
-    "label": "文化"
+    "id": "playground",
+    "label": "操场"
   }
 ]

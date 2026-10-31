@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f5f2">
+    <title>关于我们 — SBRB STUDIO</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap');
+
+        :root {
+            --bg: #f5f5f2;
+            --text: #171717;
+            --muted: #858585;
+            --line: #deded9;
+            --accent: #315efb;
+            --max-width: 1440px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, "Noto Sans SC", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+
+        .navbar {
+            height: 76px;
+            padding: 0 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+        }
+
+        .brand-mark {
+            width: 25px;
+            height: 25px;
+            background: var(--text);
+            border-radius: 7px;
+            position: relative;
+        }
+
+        .brand-mark::after {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            background: var(--bg);
+            border-radius: 2px;
+            top: 8px;
+            left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .nav-links a {
+            transition: color .25s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: var(--text);
+        }
+
+        .nav-right {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Main */
+
+        main {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 0 6%;
+        }
+
+        .hero {
+            padding: 125px 0 105px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            margin-top: 35px;
+            font-size: clamp(64px, 11vw, 150px);
+            line-height: .96;
+            letter-spacing: -0.095em;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 65px;
+            gap: 30px;
+        }
+
+        .hero-description {
+            max-width: 520px;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #666;
+        }
+
+        .hero-index {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 1px;
+        }
+
+        /* Introduction */
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            padding: 115px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-label {
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .intro h2 {
+            font-size: clamp(32px, 4vw, 54px);
+            letter-spacing: -2.5px;
+            line-height: 1.25;
+            margin-top: 30px;
+            font-weight: 700;
+        }
+
+        .intro-content {
+            padding-top: 35px;
+        }
+
+        .intro-content p {
+            font-size: 15px;
+            line-height: 2.1;
+            color: #666;
+            margin-bottom: 22px;
+        }
+
+        /* Philosophy */
+
+        .philosophy {
+            padding: 115px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .philosophy-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 65px;
+        }
+
+        .philosophy-title h2 {
+            font-size: clamp(38px, 6vw, 76px);
+            letter-spacing: -4px;
+            margin-top: 25px;
+        }
+
+        .philosophy-title p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--line);
+        }
+
+        .principle {
+            padding: 35px 30px 20px 0;
+        }
+
+        .principle + .principle {
+            padding-left: 30px;
+            border-left: 1px solid var(--line);
+        }
+
+        .principle-number {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .principle h3 {
+            margin-top: 55px;
+            font-size: 23px;
+            letter-spacing: -1px;
+        }
+
+        .principle p {
+            margin-top: 18px;
+            font-size: 13px;
+            line-height: 2;
+            color: var(--muted);
+            max-width: 280px;
+        }
+
+        /* Timeline */
+
+        .history {
+            padding: 115px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 65px;
+        }
+
+        .history-header h2 {
+            font-size: clamp(40px, 6vw, 76px);
+            letter-spacing: -4px;
+            margin-top: 25px;
+        }
+
+        .history-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .history-item {
+            display: grid;
+            grid-template-columns: 150px 1fr 30px;
+            align-items: center;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+            transition: padding .3s;
+        }
+
+        .history-item:hover {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .history-year {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .history-description {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .history-arrow {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* Statement */
+
+        .statement {
+            padding: 145px 0;
+            text-align: center;
+        }
+
+        .statement h2 {
+            font-size: clamp(40px, 7vw, 90px);
+            line-height: 1.2;
+            letter-spacing: -5px;
+            font-weight: 700;
+        }
+
+        .statement h2 span {
+            color: var(--accent);
+        }
+
+        .statement p {
+            margin-top: 30px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 35px 6%;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-info {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Animation */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(8px);
+            transition:
+                opacity .8s ease,
+                transform .8s cubic-bezier(.2,.7,.2,1),
+                filter .8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        /* Responsive */
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: 65px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-right {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 0 75px;
+            }
+
+            .hero-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 80px 0;
+            }
+
+            .intro-content {
+                padding-top: 15px;
+            }
+
+            .principles {
+                grid-template-columns: 1fr;
+            }
+
+            .principle,
+            .principle + .principle {
+                padding: 30px 0;
+                border-left: none;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .principle h3 {
+                margin-top: 25px;
+            }
+
+            .history-item {
+                grid-template-columns: 85px 1fr 20px;
+                gap: 10px;
+            }
+
+            .history-description {
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .philosophy-title,
+            .history-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .statement h2 {
+                letter-spacing: -2px;
+            }
+
+            .footer-inner {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .footer-links {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <div class="brand-mark"></div>
+            SBRB STUDIO
+        </a>
+
+        <div class="nav-links">
+            <a href="/index.html">新闻</a>
+            <a href="/about.html">关于我们</a>
+        </div>
+
+        <div class="nav-right">INDEPENDENT MEDIA</div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="eyebrow reveal">ABOUT SBRB STUDIO / 001</div>
+
+            <h1 class="reveal">
+                Beyond<br>
+                <span>Information.</span>
+            </h1>
+
+            <div class="hero-bottom reveal">
+                <p class="hero-description">
+                    我们关注信息，也关注信息背后的世界。
+                    以独立的视角观察、记录与整理，
+                    让值得关注的内容，以更清晰的方式呈现。
+                </p>
+
+                <div class="hero-index">
+                    EST. SBRB STUDIO<br>
+                    DIGITAL MEDIA
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="intro">
+            <div class="reveal">
+                <div class="section-label">01 / WHO WE ARE</div>
+                <h2>
+                    关于<br>
+                    SBRB STUDIO.
+                </h2>
+            </div>
+
+            <div class="intro-content reveal">
+                <p>
+                    SBRB STUDIO 是一个以信息整理、新闻记录与内容创作为核心的数字媒体项目。
+                </p>
+
+                <p>
+                    我们希望通过互联网，将分散的信息组织起来，
+                    以更加直观、易读的方式呈现给读者。
+                </p>
+
+                <p>
+                    对我们而言，新闻不仅是信息的传递，
+                    也是对事件、观点与时代变化的持续观察。
+                </p>
+            </div>
+        </section>
+
+        <!-- Philosophy -->
+        <section class="philosophy">
+            <div class="philosophy-title reveal">
+                <div>
+                    <div class="section-label">02 / OUR PHILOSOPHY</div>
+                    <h2>What We Believe.</h2>
+                </div>
+
+                <p>THREE PRINCIPLES / THREE PERSPECTIVES</p>
+            </div>
+
+            <div class="principles">
+                <div class="principle reveal">
+                    <div class="principle-number">01 — CLARITY</div>
+                    <h3>清晰表达</h3>
+                    <p>
+                        信息应该易于理解。
+                        我们重视内容的组织与呈现，
+                        让复杂的信息变得清晰。
+                    </p>
+                </div>
+
+                <div class="principle reveal">
+                    <div class="principle-number">02 — CURIOSITY</div>
+                    <h3>保持好奇</h3>
+                    <p>
+                        不止于看到表面。
+                        持续探索事件背后的原因、
+                        联系与更多可能性。
+                    </p>
+                </div>
+
+                <div class="principle reveal">
+                    <div class="principle-number">03 — INDEPENDENCE</div>
+                    <h3>独立思考</h3>
+                    <p>
+                        尊重事实与不同观点，
+                        不轻易将单一视角
+                        当作事情的全部。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="history">
+            <div class="history-header reveal">
+                <div>
+                    <div class="section-label">03 / OUR JOURNEY</div>
+                    <h2>Growing Forward.</h2>
+                </div>
+
+                <p class="section-label">A CONTINUOUS JOURNEY</p>
+            </div>
+
+            <div class="history-list">
+                <div class="history-item reveal">
+                    <div class="history-year">BEGINNING</div>
+                    <div class="history-description">从最初的新闻分享与记录开始</div>
+                    <div class="history-arrow">↗</div>
+                </div>
+
+                <div class="history-item reveal">
+                    <div class="history-year">EXPLORATION</div>
+                    <div class="history-description">开始探索网站建设与数字内容创作</div>
+                    <div class="history-arrow">↗</div>
+                </div>
+
+                <div class="history-item reveal">
+                    <div class="history-year">EVOLUTION</div>
+                    <div class="history-description">持续迭代内容平台与视觉设计</div>
+                    <div class="history-arrow">↗</div>
+                </div>
+
+                <div class="history-item reveal">
+                    <div class="history-year">NOW</div>
+                    <div class="history-description">以 SBRB STUDIO 的身份继续前进</div>
+                    <div class="history-arrow">↗</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statement -->
+        <section class="statement reveal">
+            <div class="section-label">04 / LOOKING AHEAD</div>
+
+            <h2>
+                Stay Curious.<br>
+                <span>Keep Exploring.</span>
+            </h2>
+
+            <p>
+                THE WORLD IS MORE THAN WHAT WE SEE.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">SBRB STUDIO © 2026</div>
+
+            <div class="footer-info">
+                INDEPENDENT DIGITAL MEDIA
+            </div>
+
+            <div class="footer-links">
+                <a href="/index.html">新闻</a>
+                <a href="/about.html">关于我们</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
