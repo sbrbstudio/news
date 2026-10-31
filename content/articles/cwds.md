@@ -29,7 +29,7 @@ highlights:
 
 我们将以**一年**为一载持续举办操王大赛。
 
-有何消息都会发布在SB日报工作室的[官方新闻网站](https://sbrbstudio.github.io/news/index.html)上。
+有何消息都会发布在SB日报工作室的[官方新闻网站](./index.html)上。
 我们期待你的到来。
 
 > 操王大赛永不停滞。
@@ -38,7 +38,7 @@ highlights:
 
 ## 结语
 
-顺便告诉大家,我们重构了SB日报的[新闻网站](https://sbrbstudio.github.io/news/index.html)。
+顺便告诉大家,我们重构了SB日报的[新闻网站](./index.html)。
 并且会永远追随时代审美,界面更加美观,适配了各个客户端。
 
 希望大家继续支持操王大赛。
