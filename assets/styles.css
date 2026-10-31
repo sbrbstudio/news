@@ -1022,63 +1022,79 @@ main {
   font-weight: 700;
 }
 
-.newsletter {
+.daily-saying {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr minmax(380px, 0.65fr);
-  gap: 60px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 25px;
   align-items: center;
   margin-bottom: 80px;
-  padding: 38px 42px;
+  padding: 34px 38px;
   color: #fff;
+  background: var(--ink);
+  border-top: 5px solid var(--signal);
+}
+
+.saying-mark {
+  align-self: start;
+  color: var(--signal);
+  font-family: Georgia, serif;
+  font-size: 88px;
+  line-height: 0.72;
+}
+
+.saying-copy {
+  min-width: 0;
+}
+
+.saying-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #bfc7cf;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.saying-quote {
+  max-width: 920px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+
+.saying-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  color: var(--paper);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.saying-next:hover {
+  color: var(--ink);
+  border-color: var(--signal);
   background: var(--signal);
 }
 
-.newsletter > div {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.newsletter-rule {
-  width: 58px;
-  height: 2px;
-  background: var(--paper);
-}
-
-.newsletter p {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 21px;
-  font-weight: 700;
-}
-
-.newsletter form {
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
-
-.newsletter input {
-  min-width: 0;
-  padding: 12px 14px;
-  color: var(--ink);
-  border: 0;
-  border-radius: 0;
-  outline: none;
-  background: var(--paper-light);
-  font-size: 12px;
-}
-
-.newsletter button {
-  padding: 0 18px;
-  color: var(--ink);
-  cursor: pointer;
-  border: 0;
-  border-left: 1px solid var(--rule);
-  border-radius: 0;
-  background: #fff;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 800;
+.saying-next svg {
+  width: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
 }
 
 .site-footer {
@@ -1975,35 +1991,25 @@ main {
     font-size: 25px;
   }
 
-  .newsletter {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .daily-saying {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
     margin-bottom: 55px;
-    padding: 27px 20px;
+    padding: 26px 20px;
   }
 
-  .newsletter > div {
-    align-items: flex-start;
+  .saying-mark {
+    font-size: 62px;
   }
 
-  .newsletter-rule {
-    flex-shrink: 0;
-    width: 24px;
-    margin-top: 11px;
+  .saying-quote {
+    font-size: 22px;
   }
 
-  .newsletter p {
-    font-size: 18px;
-  }
-
-  .newsletter form {
-    grid-template-columns: 1fr;
-    gap: 7px;
-  }
-
-  .newsletter button {
-    min-height: 42px;
-    border-left: 0;
+  .saying-next {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 7px;
   }
 
   .site-footer {

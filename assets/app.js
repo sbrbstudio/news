@@ -23,6 +23,39 @@ function setCurrentDate() {
     new Intl.DateTimeFormat("zh-CN", { weekday: "long" }).format(today);
 }
 
+async function loadDailySaying() {
+  const quote = document.querySelector("#daily-saying");
+  const button = document.querySelector("#next-saying");
+
+  try {
+    const response = await fetch(`./saying.txt?v=${Date.now()}`);
+    if (!response.ok) throw new Error("无法载入 saying.txt");
+
+    const sayings = (await response.text())
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    if (!sayings.length) throw new Error("saying.txt 中没有可用内容");
+
+    let current = "";
+    const showRandomSaying = () => {
+      const choices =
+        sayings.length > 1
+          ? sayings.filter((saying) => saying !== current)
+          : sayings;
+      current = choices[Math.floor(Math.random() * choices.length)];
+      quote.textContent = current;
+    };
+
+    showRandomSaying();
+    button.addEventListener("click", showRandomSaying);
+  } catch {
+    quote.textContent = "暂时没有找到可以分享的谚语。";
+    button.hidden = true;
+  }
+}
+
 function showToast(message) {
   const toast = document.querySelector(".toast");
   window.clearTimeout(toastTimer);
@@ -539,16 +572,12 @@ function bindControls() {
     renderLatest();
   });
 
-  document.querySelector("#newsletter-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    event.target.reset();
-    showToast("演示订阅已记录，正式上线后可接入邮件服务。");
-  });
 }
 
 async function initHome() {
   setCurrentDate();
   window.setInterval(setCurrentDate, 60_000);
+  loadDailySaying();
   try {
     [articles, areaTree, categories] = await Promise.all([
       loadArticles(),

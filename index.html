@@ -9,7 +9,7 @@
     />
     <meta name="theme-color" content="#f4f1e9" />
     <title>SBRBSTUDIO | 新闻日报</title>
-    <link rel="stylesheet" href="./assets/styles.css?v=20261031-2" />
+    <link rel="stylesheet" href="./assets/styles.css?v=20261031-3" />
   </head>
   <body class="news-home">
     <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -149,21 +149,21 @@
         </div>
       </section>
 
-      <section class="newsletter">
-        <div>
-          <span class="newsletter-rule" aria-hidden="true"></span>
-          <p>每天一封信，读懂世界今天发生了什么。</p>
+      <section class="daily-saying" aria-labelledby="daily-saying-title">
+        <span class="saying-mark" aria-hidden="true">“</span>
+        <div class="saying-copy">
+          <span class="saying-label" id="daily-saying-title">今日一句</span>
+          <blockquote class="saying-quote" id="daily-saying" aria-live="polite">
+            正在翻开一句旧话。
+          </blockquote>
         </div>
-        <form id="newsletter-form">
-          <label class="sr-only" for="newsletter-email">电子邮箱</label>
-          <input
-            id="newsletter-email"
-            type="email"
-            placeholder="你的电子邮箱"
-            required
-          />
-          <button type="submit">订阅早报</button>
-        </form>
+        <button class="saying-next" id="next-saying" type="button">
+          换一句
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 7v5h-5M4 17v-5h5"></path>
+            <path d="M6.1 9a7 7 0 0 1 11.7-1L20 12M4 12l2.2 4a7 7 0 0 0 11.7-1"></path>
+          </svg>
+        </button>
       </section>
     </main>
 
@@ -178,6 +178,6 @@
     </footer>
 
     <div class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./assets/app.js?v=20261031-2"></script>
+    <script type="module" src="./assets/app.js?v=20261031-3"></script>
   </body>
 </html>
