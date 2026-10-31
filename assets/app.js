@@ -7,6 +7,8 @@ const state = {
 
 let articles = [];
 let categories = [];
+let areaTree = [];
+let areaIndex = new Map();
 let toastTimer;
 
 function setCurrentDate() {
@@ -123,6 +125,14 @@ async function loadArticles() {
   );
 }
 
+async function loadAreas() {
+  const response = await fetch("./areas.txt");
+  if (!response.ok) {
+    throw new Error("无法载入 areas.txt");
+  }
+  return parseAreaTree(await response.text());
+}
+
 async function loadCategories() {
   const response = await fetch("./content/categories.json");
   if (!response.ok) {
@@ -140,6 +150,39 @@ function categoryLabel(article) {
   );
 }
 
+function parseAreaTree(source) {
+  const roots = [];
+  const stack = [];
+
+  source
+    .split(/\r?\n/)
+    .map((line) => line.replaceAll("\t", "    "))
+    .filter((line) => line.trim())
+    .forEach((line) => {
+      const indent = line.match(/^\s*/)[0].length;
+      const name = line.trim();
+
+      while (stack.length && stack[stack.length - 1].indent >= indent) {
+        stack.pop();
+      }
+
+      const parent = stack.length ? stack[stack.length - 1].node : null;
+      const path = parent ? `${parent.path}/${name}` : name;
+      const node = { name, path, children: [], parent };
+
+      if (parent) {
+        parent.children.push(node);
+      } else {
+        roots.push(node);
+      }
+
+      areaIndex.set(path, node);
+      stack.push({ indent, node });
+    });
+
+  return roots;
+}
+
 function articleArea(article) {
   return article.area || article.area_path || "";
 }
@@ -152,6 +195,46 @@ function areaMatches(article, selectedArea) {
   if (selectedArea === "all") return true;
   const path = articleArea(article);
   return path === selectedArea || path.startsWith(`${selectedArea}/`);
+}
+
+function areaCount(node) {
+  return articles.filter((article) => areaMatches(article, node.path)).length;
+}
+
+function renderAreaNode(node, depth = 0) {
+  const hasChildren = node.children.length > 0;
+  const count = areaCount(node);
+  const isActive = state.area === node.path;
+  const children = hasChildren
+    ? `<div class="area-children" hidden>${node.children
+        .map((child) => renderAreaNode(child, depth + 1))
+        .join("")}</div>`
+    : "";
+
+  return `
+    <div class="area-node${isActive ? " is-active" : ""}" data-area-node="${escapeHtml(node.path)}">
+      <div class="area-row" style="--depth: ${depth}">
+        ${
+          hasChildren
+            ? `<button class="area-expand" type="button" aria-label="展开${escapeHtml(node.name)}" aria-expanded="false">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5.5 3 5 5-5 5"></path></svg>
+              </button>`
+            : `<span class="area-expand-spacer" aria-hidden="true"></span>`
+        }
+        <button class="area-select" type="button" data-area-path="${escapeHtml(node.path)}">
+          <span>${escapeHtml(node.name)}</span>
+          <small>${count}</small>
+        </button>
+      </div>
+      ${children}
+    </div>
+  `;
+}
+
+function renderAreaTree() {
+  document.querySelector("#area-tree").innerHTML = areaTree
+    .map((node) => renderAreaNode(node))
+    .join("");
 }
 
 function formatShortDate(date) {
@@ -379,9 +462,37 @@ function bindControls() {
     areaDropdown.classList.toggle("is-open", willOpen);
   });
 
+  document.querySelector("#area-tree").addEventListener("click", (event) => {
+    const expandButton = event.target.closest(".area-expand");
+    if (expandButton) {
+      const node = expandButton.closest(".area-node");
+      const children = node.querySelector(":scope > .area-children");
+      const willOpen = children.hidden;
+      children.hidden = !willOpen;
+      expandButton.setAttribute("aria-expanded", String(willOpen));
+      expandButton.setAttribute(
+        "aria-label",
+        `${willOpen ? "收起" : "展开"}${node.dataset.areaNode.split("/").pop()}`,
+      );
+      expandButton.classList.toggle("is-expanded", willOpen);
+      return;
+    }
+
+    const selectButton = event.target.closest(".area-select");
+    if (!selectButton) return;
+
+    state.area = selectButton.dataset.areaPath;
+    areaValue.textContent = state.area.split("/").pop();
+    renderAreaTree();
+    areaDropdown.hidden = true;
+    areaToggle.setAttribute("aria-expanded", "false");
+    renderLatest();
+  });
+
   document.querySelector("#clear-area").addEventListener("click", () => {
     state.area = "all";
     areaValue.textContent = "全部地区";
+    renderAreaTree();
     areaDropdown.hidden = true;
     areaToggle.setAttribute("aria-expanded", "false");
     renderLatest();
@@ -422,6 +533,7 @@ function bindControls() {
     state.query = "";
     search.value = "";
     document.querySelector("#area-filter-value").textContent = "全部地区";
+    renderAreaTree();
     document.querySelector("#sort-order").value = "latest";
     syncCategoryControls();
     renderLatest();
@@ -438,14 +550,16 @@ async function initHome() {
   setCurrentDate();
   window.setInterval(setCurrentDate, 60_000);
   try {
-    [articles, categories] = await Promise.all([
+    [articles, areaTree, categories] = await Promise.all([
       loadArticles(),
+      loadAreas(),
       loadCategories(),
     ]);
     const categoryIds = new Set(categories.map((category) => category.id));
     if (state.category !== "all" && !categoryIds.has(state.category)) {
       state.category = "all";
     }
+    renderAreaTree();
     renderTaxonomyControls();
     renderLeadZone();
     syncCategoryControls();

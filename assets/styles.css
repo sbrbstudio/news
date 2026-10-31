@@ -752,6 +752,12 @@ main {
   background: var(--signal);
 }
 
+#area-tree {
+  padding-top: 5px;
+  margin-top: 4px;
+  border-top: 1px solid var(--rule-light);
+}
+
 .area-dropdown-heading {
   display: flex;
   align-items: center;

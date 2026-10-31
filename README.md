@@ -1,7 +1,7 @@
 # SBRBSTUDIO News
 
-这是一个用 Markdown 管理文章的本地新闻日报网站。文章地区保存在各自的
-Markdown front matter 中，新闻分类来自 `content/categories.json`，文章位于
+这是一个用 Markdown 管理文章的本地新闻日报网站。地区结构来自根目录的
+`areas.txt`，新闻分类来自 `content/categories.json`，文章位于
 `content/articles/`。
 
 ## 启动网站
@@ -24,7 +24,6 @@ node serve.mjs
 ```text
 D:\news
 ├─ assets
-│  ├─ areas.txt          # 地区层级参考文件
 │  ├─ covers             # 新闻封面图片
 │  ├─ app.js             # 首页逻辑
 │  ├─ article.js         # 文章页逻辑
@@ -36,13 +35,13 @@ D:\news
 │  └─ articles           # Markdown 文章
 ├─ index.html            # 新闻首页
 ├─ article.html          # 新闻正文页
+├─ areas.txt             # 地区层级与折叠列表
 └─ serve.mjs             # 本地预览服务
 ```
 
 ## 编辑地区标签
 
-首页地区菜单目前只保留“查看全部”，不会读取 `assets/areas.txt`。文章仍会
-保存并显示地区路径，便于搜索和以后切换为地区筛选。地区层级可参考：
+打开根目录的 `areas.txt`。每一行是一个地区层级，使用四个空格表示下一级：
 
 ```text
 尖草坪区
@@ -64,6 +63,8 @@ D:\news
 - 删除地区：删除该行，以及它下面所有更深的子级行。
 - `暂无`：普通叶子标签。文章也可以直接归到它的父级，例如
   `area: "小店区"`。
+- 点击展开箭头可以折叠或展开子级。
+- 点击地区名称会筛选该地区及它下面的全部内容。
 
 修改或删除地区后，应同步检查文章 front matter 中的 `area`：
 
