@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">智能工厂</title>
+  <desc id="desc">机械臂、生产线与数据节点组成的现代工厂插画。</desc>
+  <rect width="1600" height="1000" fill="#e5dfd2"/>
+  <path d="M0 0h1600v1000H0z" fill="url(#grid)"/>
+  <defs>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0v64" fill="none" stroke="#183047" stroke-width="1" opacity=".13"/>
+    </pattern>
+    <linearGradient id="glow" x1="0" x2="1">
+      <stop offset="0" stop-color="#cf382d"/>
+      <stop offset="1" stop-color="#f0a036"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 788h1600v212H0z" fill="#183047"/>
+  <path d="M120 788 234 638h228l111 150z" fill="#cec6b5"/>
+  <path d="M967 788 1071 607h239l101 181z" fill="#cec6b5"/>
+  <g fill="none" stroke="#183047" stroke-width="38" stroke-linecap="square">
+    <path d="M506 788V397l182-103 177 127"/>
+    <path d="m690 295 219 111"/>
+  </g>
+  <g fill="none" stroke="#cf382d" stroke-width="20" stroke-linecap="square">
+    <path d="M1087 788V420l-157-93-192 120"/>
+    <path d="m927 327-216 97"/>
+  </g>
+  <g fill="#f4f1e9" stroke="#183047" stroke-width="10">
+    <circle cx="506" cy="788" r="65"/>
+    <circle cx="855" cy="405" r="37"/>
+    <circle cx="1094" cy="788" r="65"/>
+    <circle cx="734" cy="447" r="37"/>
+  </g>
+  <g fill="#cf382d">
+    <circle cx="506" cy="788" r="18"/>
+    <circle cx="855" cy="405" r="13"/>
+    <circle cx="1094" cy="788" r="18"/>
+    <circle cx="734" cy="447" r="13"/>
+  </g>
+  <g fill="#f4c34d" stroke="#183047" stroke-width="8">
+    <rect x="368" y="698" width="180" height="58"/>
+    <rect x="1037" y="692" width="206" height="64"/>
+    <rect x="717" y="775" width="186" height="58"/>
+  </g>
+  <g fill="#183047">
+    <circle cx="417" cy="727" r="9"/><circle cx="473" cy="727" r="9"/>
+    <circle cx="1083" cy="724" r="9"/><circle cx="1139" cy="724" r="9"/>
+    <circle cx="765" cy="804" r="9"/><circle cx="823" cy="804" r="9"/>
+  </g>
+  <g fill="none" stroke="#cf382d" stroke-width="4" stroke-dasharray="12 12">
+    <path d="M119 176h393v162h205"/>
+    <path d="M1481 192h-351v249h-181"/>
+    <path d="M1220 103v231h149"/>
+  </g>
+  <g fill="#183047">
+    <circle cx="119" cy="176" r="16"/><circle cx="717" cy="338" r="16"/>
+    <circle cx="1481" cy="192" r="16"/><circle cx="949" cy="441" r="16"/>
+    <circle cx="1220" cy="103" r="16"/><circle cx="1369" cy="334" r="16"/>
+  </g>
+  <rect x="1195" y="56" width="174" height="52" fill="url(#glow)"/>
+  <path d="M1406 0v1000" stroke="#f4f1e9" stroke-width="3" opacity=".55"/>
+  <path d="M1434 0v1000" stroke="#f4f1e9" stroke-width="1" opacity=".45"/>
+</svg>

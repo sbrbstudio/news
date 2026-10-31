@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f1e9" />
+    <title>报道 | SBRBSTUDIO</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body class="article-page">
+    <a class="skip-link" href="#article-content">跳到正文</a>
+
+    <header class="article-header">
+      <div class="article-utility">
+        <a href="./index.html" aria-label="返回 SBRBSTUDIO 首页">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m15 5-7 7 7 7"></path>
+          </svg>
+          返回首页
+        </a>
+        <span><time id="article-today">正在读取日期</time> · 本地版</span>
+      </div>
+      <a class="article-masthead" href="./index.html">
+        SBRB<strong>STUDIO</strong>
+      </a>
+    </header>
+
+    <main class="article-main" id="article-content">
+      <div class="article-loading" id="article-loading">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div id="article-view" hidden>
+        <div class="article-intro">
+          <nav class="article-breadcrumb" aria-label="面包屑">
+            <a href="./index.html">首页</a>
+            <span>/</span>
+            <a id="article-category-link" href="./index.html"></a>
+          </nav>
+
+          <div class="article-kicker">
+            <span id="article-category"></span>
+            <span id="article-region"></span>
+          </div>
+
+          <h1 id="article-title"></h1>
+          <p class="article-standfirst" id="article-summary"></p>
+
+          <div class="article-byline">
+            <div>
+              <span class="byline-label">报道</span>
+              <strong id="article-author"></strong>
+            </div>
+            <div>
+              <span class="byline-label">发布</span>
+              <time id="article-date"></time>
+            </div>
+            <div>
+              <span class="byline-label">阅读时间</span>
+              <span id="article-reading-time"></span>
+            </div>
+            <button class="share-button" type="button" id="share-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="18" cy="5" r="2.5"></circle>
+                <circle cx="6" cy="12" r="2.5"></circle>
+                <circle cx="18" cy="19" r="2.5"></circle>
+                <path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5"></path>
+              </svg>
+              分享
+            </button>
+          </div>
+        </div>
+
+        <figure class="article-cover">
+          <img id="article-cover" alt="" />
+          <figcaption>
+            <span id="article-caption"></span>
+            <span class="caption-credit">插图：SBRBSTUDIO</span>
+          </figcaption>
+        </figure>
+
+        <div class="article-layout">
+          <article class="article-body" id="article-body"></article>
+
+          <aside class="article-aside">
+            <section class="brief-box">
+              <h2>这篇报道包括</h2>
+              <ol id="article-highlights"></ol>
+            </section>
+
+            <section class="related-box">
+              <h2>继续阅读</h2>
+              <div id="related-stories"></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="article-tags-row" aria-label="文章标签">
+          <span>标签</span>
+          <div class="article-tags" id="article-tags"></div>
+        </section>
+
+        <section class="article-end">
+          <span>END</span>
+          <p>本文内容为 SBRBSTUDIO 界面演示，不代表真实新闻事件。</p>
+          <a href="./index.html">返回今日首页</a>
+        </section>
+
+        <section class="more-stories" aria-labelledby="more-stories-title">
+          <div class="section-title-row">
+            <div>
+              <h2 id="more-stories-title">更多报道</h2>
+              <p>继续观察正在发生的变化。</p>
+            </div>
+          </div>
+          <div class="more-grid" id="more-grid"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="./index.html">SBRBSTUDIO</a>
+      <div class="footer-links">
+        <a href="./index.html">首页</a>
+        <a href="./index.html#latest">最新</a>
+        <a href="./README.md">编辑说明</a>
+      </div>
+      <p>© 2026 SBRBSTUDIO · 新闻样例站 · 地区来自 areas.txt</p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/article.js"></script>
+  </body>
+</html>

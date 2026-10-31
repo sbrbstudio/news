@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">港口与全球货运</title>
+  <desc id="desc">深蓝色港口、红色集装箱、货轮和交错航线组成的编辑插画。</desc>
+  <rect width="1600" height="1000" fill="#17324b"/>
+  <path d="M0 690h1600v310H0z" fill="#0c2237"/>
+  <path d="M0 760c180-44 335-27 490 2 184 35 341 13 516-12 224-32 405-17 594 17v233H0z" fill="#264f68"/>
+  <g fill="none" stroke="#8aa1ad" stroke-width="3" opacity=".42">
+    <path d="M-80 855c270-128 528-93 798 12s528 116 962-56"/>
+    <path d="M-60 909c302-115 535-63 782 28s542 94 946-60"/>
+    <path d="M-40 962c312-96 544-42 771 39s547 78 916-50"/>
+  </g>
+  <g fill="#cf382d">
+    <path d="m905 440 329 0-45 128H866z"/>
+    <path d="m897 400 326 0-18 40H878z"/>
+  </g>
+  <g fill="#d8d0bd">
+    <path d="M980 420h58v20h-58zM1051 420h43v20h-43zM1107 420h71v20h-71z"/>
+  </g>
+  <g fill="#f4c34d">
+    <rect x="976" y="575" width="142" height="76"/>
+    <rect x="1131" y="575" width="142" height="76"/>
+    <rect x="1053" y="648" width="142" height="76"/>
+    <rect x="1209" y="648" width="142" height="76"/>
+  </g>
+  <g fill="#d7e2e4">
+    <rect x="986" y="586" width="122" height="54"/>
+    <rect x="1141" y="586" width="122" height="54"/>
+    <rect x="1063" y="659" width="122" height="54"/>
+    <rect x="1219" y="659" width="122" height="54"/>
+  </g>
+  <g fill="none" stroke="#f4c34d" stroke-width="16">
+    <path d="M472 134v530M610 134v530M420 188h602"/>
+    <path d="M504 188 468 634M720 188l36 446"/>
+  </g>
+  <g fill="#e0604d">
+    <path d="M360 603h125v124H360z"/>
+    <path d="M499 603h125v124H499z"/>
+    <path d="M638 603h125v124H638z"/>
+  </g>
+  <g fill="#f7f0df">
+    <path d="M370 615h105v101H370z"/>
+    <path d="M509 615h105v101H509z"/>
+    <path d="M648 615h105v101H648z"/>
+  </g>
+  <g fill="#17324b" opacity=".75">
+    <path d="M382 673h30v43h-30zM424 673h38v29h-38zM521 673h30v43h-30zM563 673h38v29h-38zM660 673h30v43h-30zM702 673h38v29h-38z"/>
+  </g>
+  <g fill="none" stroke="#9fb4bc" stroke-width="4">
+    <path d="M114 281c188 111 230 227 157 389"/>
+    <path d="M134 281h-40M134 281v40"/>
+    <path d="M1374 166c-189 120-213 264-142 414"/>
+    <path d="M1368 166h42M1368 166v42"/>
+  </g>
+  <g fill="#d8d0bd">
+    <circle cx="110" cy="282" r="12"/>
+    <circle cx="1374" cy="166" r="12"/>
+  </g>
+  <path d="M0 54h1600" stroke="#f7f0df" stroke-width="2" opacity=".4"/>
+  <path d="M0 70h1600" stroke="#f7f0df" stroke-width="1" opacity=".25"/>
+</svg>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SBRBSTUDIO 新闻日报，关注世界、科技、商业、气候与文化。"
+    />
+    <meta name="theme-color" content="#f4f1e9" />
+    <title>SBRBSTUDIO | 新闻日报</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body class="news-home">
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <header class="news-header">
+      <div class="utility-bar">
+        <div class="utility-edition">
+          <span id="current-date">正在读取日期</span>
+          <span id="current-weekday"></span>
+          <span>本地版</span>
+        </div>
+        <div class="utility-actions">
+          <span class="live-status"><i aria-hidden="true"></i>新闻持续更新</span>
+          <button class="utility-link search-jump" type="button">
+            搜索报道
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <a class="masthead" href="./index.html" aria-label="SBRBSTUDIO 新闻首页">
+        <span class="masthead-word">SBRB<strong>STUDIO</strong></span>
+        <span class="masthead-tagline">THE DAILY BRIEF<br />记录正在发生的变化</span>
+      </a>
+
+      <nav class="category-nav" aria-label="新闻分类">
+        <a class="nav-home is-active" href="#latest">首页</a>
+        <div class="category-links" id="category-links"></div>
+        <button class="nav-search" type="button" aria-label="打开搜索">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <div class="breaking-bar">
+      <div class="breaking-label">即时</div>
+      <p id="breaking-copy">
+        学校放学后的公共空间、公园座椅与社区地图，正在成为今天最值得关注的本地议题。
+      </p>
+      <time datetime="2026-10-31T08:40:00+08:00">08:40</time>
+    </div>
+
+    <main id="main-content">
+      <section class="lead-zone" id="lead-zone" aria-label="今日头条">
+        <div class="lead-skeleton">
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+
+      <section class="edition-note" aria-label="今日编辑提示">
+        <span class="edition-number">NO. 042</span>
+        <p>
+          今天，我们从教室、学校操场、公园座椅和社区地图出发，记录家门口正在发生的变化。
+        </p>
+        <span class="edition-byline">SBRBSTUDIO 编辑部</span>
+      </section>
+
+      <section class="latest-section" id="latest">
+        <div class="section-title-row">
+          <div>
+            <h2>最新报道</h2>
+            <p>按标签、地区和时间找到你关心的新闻。</p>
+          </div>
+          <span class="story-count" id="story-count">正在载入</span>
+        </div>
+
+        <div class="news-toolbar" aria-label="筛选和排序新闻">
+          <label class="search-field" for="news-search">
+            <span>搜索</span>
+            <input
+              id="news-search"
+              type="search"
+              placeholder="输入标题、摘要或关键词"
+              autocomplete="off"
+            />
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+          </label>
+
+          <div class="filter-chips" aria-label="按分类筛选">
+            <button class="filter-chip is-active" type="button" data-filter="all">
+              全部
+            </button>
+          </div>
+
+          <div class="select-group">
+            <div class="area-control">
+              <button
+                class="area-filter-toggle"
+                id="area-filter-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="area-dropdown"
+              >
+                <span>地区</span>
+                <strong id="area-filter-value">全部地区</strong>
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="m5 7.5 5 5 5-5"></path>
+                </svg>
+              </button>
+              <div class="area-dropdown" id="area-dropdown" hidden>
+                <button class="area-all-option" id="clear-area" type="button">
+                  查看全部
+                </button>
+              </div>
+            </div>
+            <label>
+              排序
+              <select id="sort-order">
+                <option value="latest">最新发布</option>
+                <option value="oldest">最早发布</option>
+                <option value="title">标题排序</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="latest-grid" id="latest-grid" aria-live="polite">
+          <div class="story-card-skeleton"></div>
+          <div class="story-card-skeleton"></div>
+          <div class="story-card-skeleton"></div>
+        </div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <p>没有找到匹配的报道。</p>
+          <button type="button" id="clear-filters">清除筛选条件</button>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div>
+          <span class="newsletter-rule" aria-hidden="true"></span>
+          <p>每天一封信，读懂世界今天发生了什么。</p>
+        </div>
+        <form id="newsletter-form">
+          <label class="sr-only" for="newsletter-email">电子邮箱</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            placeholder="你的电子邮箱"
+            required
+          />
+          <button type="submit">订阅早报</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="./index.html">SBRBSTUDIO</a>
+      <div class="footer-links">
+        <a href="./index.html">首页</a>
+        <a href="#latest">最新</a>
+        <a href="./README.md">编辑说明</a>
+      </div>
+      <p>© 2026 SBRBSTUDIO · 新闻样例站 · 地区来自 areas.txt</p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>

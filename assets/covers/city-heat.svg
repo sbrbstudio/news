@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">城市夜晚高温</title>
+  <desc id="desc">橙红色夜空、城市建筑、树冠和阴影构成的插画。</desc>
+  <rect width="1600" height="1000" fill="#152a39"/>
+  <circle cx="1236" cy="228" r="138" fill="#ef6b41"/>
+  <circle cx="1236" cy="228" r="190" fill="none" stroke="#ef6b41" stroke-width="3" opacity=".45"/>
+  <path d="M0 737h1600v263H0z" fill="#0b1b25"/>
+  <g fill="#e1d8c8">
+    <path d="M74 308h243v443H74z"/>
+    <path d="M343 455h322v296H343z"/>
+    <path d="M690 240h250v511H690z"/>
+    <path d="M1057 371h240v380h-240z"/>
+    <path d="M1322 490h218v261h-218z"/>
+  </g>
+  <g fill="#183047">
+    <path d="M104 348h50v94h-50zM186 348h50v94h-50zM265 348h27v94h-27z"/>
+    <path d="M104 482h50v94h-50zM186 482h50v94h-50zM265 482h27v94h-27z"/>
+    <path d="M370 486h43v72h-43zM438 486h43v72h-43zM506 486h43v72h-43zM574 486h43v72h-43z"/>
+    <path d="M717 288h45v84h-45zM790 288h45v84h-45zM863 288h45v84h-45z"/>
+    <path d="M717 407h45v84h-45zM790 407h45v84h-45zM863 407h45v84h-45z"/>
+    <path d="M1085 407h36v69h-36zM1144 407h36v69h-36zM1203 407h36v69h-36z"/>
+  </g>
+  <g fill="#f5c44d">
+    <path d="M725 295h29v60h-29zM798 295h29v60h-29z"/>
+    <path d="M1121 421h24v39h-24zM1180 421h24v39h-24zM1239 421h24v39h-24z"/>
+  </g>
+  <g fill="#6d9175">
+    <circle cx="879" cy="624" r="121"/>
+    <circle cx="803" cy="678" r="91"/>
+    <circle cx="977" cy="696" r="97"/>
+  </g>
+  <path d="M874 761V535" stroke="#294744" stroke-width="31"/>
+  <path d="M808 730 872 623M941 725l-66-119" stroke="#294744" stroke-width="21"/>
+  <g fill="none" stroke="#cf382d" stroke-width="5">
+    <path d="M120 863c230-107 449-95 690 2s448 91 670-21"/>
+    <path d="M120 904c211-89 435-82 681 4s449 84 669-24"/>
+  </g>
+  <g fill="#f4f1e9" opacity=".8">
+    <circle cx="248" cy="201" r="4"/><circle cx="451" cy="137" r="3"/>
+    <circle cx="972" cy="132" r="5"/><circle cx="1071" cy="228" r="3"/>
+    <circle cx="1451" cy="268" r="4"/>
+  </g>
+  <path d="M0 38h1600M0 53h1600" stroke="#f4f1e9" stroke-width="1" opacity=".35"/>
+</svg>

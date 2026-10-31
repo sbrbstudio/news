@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">放学后的教室</title>
+  <desc id="desc">课桌、书本、窗户与傍晚光线组成的教室插画。</desc>
+  <rect width="1600" height="1000" fill="#e9e1d2"/>
+  <path d="M0 0h1600v1000H0z" fill="url(#grid)"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#17324b" stroke-width="1" opacity=".11"/>
+    </pattern>
+  </defs>
+  <rect x="1030" y="95" width="420" height="470" fill="#f7f2e7" stroke="#17324b" stroke-width="16"/>
+  <path d="M1030 375h420M1235 95v470" stroke="#17324b" stroke-width="12"/>
+  <circle cx="1353" cy="218" r="74" fill="#f0b94e"/>
+  <path d="m0 1000 0-300 1600 0v300z" fill="#17324b"/>
+  <g fill="#cf382d">
+    <rect x="120" y="612" width="345" height="78"/>
+    <rect x="536" y="612" width="345" height="78"/>
+    <rect x="952" y="612" width="345" height="78"/>
+  </g>
+  <g fill="#17324b">
+    <rect x="160" y="690" width="26" height="255"/>
+    <rect x="397" y="690" width="26" height="255"/>
+    <rect x="576" y="690" width="26" height="255"/>
+    <rect x="813" y="690" width="26" height="255"/>
+    <rect x="992" y="690" width="26" height="255"/>
+    <rect x="1229" y="690" width="26" height="255"/>
+  </g>
+  <g fill="#f7f2e7" stroke="#17324b" stroke-width="8">
+    <path d="M185 548h200v62H185z"/>
+    <path d="M601 548h200v62H601z"/>
+    <path d="M1017 548h200v62h-200z"/>
+  </g>
+  <g fill="#4d8393">
+    <rect x="213" y="528" width="121" height="20"/>
+    <rect x="628" y="524" width="143" height="24"/>
+    <rect x="1046" y="530" width="102" height="18"/>
+  </g>
+  <g fill="#17324b">
+    <circle cx="235" cy="480" r="38"/>
+    <path d="M196 528c0-57 17-89 42-89s40 31 40 89z"/>
+    <circle cx="650" cy="462" r="34"/>
+    <path d="M615 528c0-58 14-94 37-94s38 38 38 94z"/>
+    <circle cx="1084" cy="476" r="36"/>
+    <path d="M1047 528c0-59 16-91 38-91s39 32 39 91z"/>
+  </g>
+  <path d="M84 158h542v12H84zM84 193h432v7H84z" stroke="#cf382d" stroke-width="7"/>
+  <path d="M0 68h1600" stroke="#17324b" stroke-width="2" opacity=".3"/>
+</svg>

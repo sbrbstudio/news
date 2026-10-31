@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">独立出版</title>
+  <desc id="desc">打开的书籍、纸张、油墨与街区房屋构成的编辑插画。</desc>
+  <rect width="1600" height="1000" fill="#eee9de"/>
+  <path d="M0 0h1600v1000H0z" fill="url(#papergrid)"/>
+  <defs>
+    <pattern id="papergrid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0v44" fill="none" stroke="#183047" stroke-width=".7" opacity=".1"/>
+    </pattern>
+  </defs>
+  <path d="M82 180h386v584H82z" fill="#cf382d"/>
+  <path d="M125 223h300v498H125z" fill="#f4f1e9"/>
+  <path d="M240 252h73v439h-73z" fill="#183047"/>
+  <path d="M179 296h212M179 336h212M179 376h212M179 416h138" stroke="#183047" stroke-width="8"/>
+  <path d="M1185 84h294v347h-294z" fill="#f4c34d"/>
+  <path d="M1222 125h220v263h-220z" fill="#183047"/>
+  <path d="m1270 300 61-132 68 132z" fill="#f4f1e9"/>
+  <circle cx="1370" cy="168" r="28" fill="#cf382d"/>
+  <path d="M1078 605h362v194h-362z" fill="#183047"/>
+  <path d="M1114 642h132v121h-132zM1270 642h132v121h-132z" fill="#d9e1e2"/>
+  <path d="m1114 642 66-78 66 78zM1270 642l66-78 66 78z" fill="#cf382d"/>
+  <path d="M493 392c91-62 183-58 275 0v371c-89-54-181-55-275 0z" fill="#f7f3e9" stroke="#183047" stroke-width="8"/>
+  <path d="M792 392c101-59 204-61 308 0v371c-108-48-210-47-308 0z" fill="#f7f3e9" stroke="#183047" stroke-width="8"/>
+  <path d="M792 385v378" stroke="#183047" stroke-width="13"/>
+  <g fill="#183047">
+    <path d="M543 477h158v9H543zM543 506h158v9H543zM543 535h158v9H543zM543 564h116v9H543z"/>
+    <path d="M842 477h184v9H842zM842 506h184v9H842zM842 535h184v9H842zM842 564h146v9H842z"/>
+  </g>
+  <path d="M543 638h156v71H543z" fill="#cf382d"/>
+  <path d="M842 638h184v71H842z" fill="#f4c34d"/>
+  <g fill="none" stroke="#183047" stroke-width="3" opacity=".55">
+    <path d="M510 219c83 38 128 110 127 202"/>
+    <path d="M1031 477c-92 37-141 108-147 205"/>
+  </g>
+  <path d="M0 874h1600" stroke="#183047" stroke-width="4"/>
+</svg>

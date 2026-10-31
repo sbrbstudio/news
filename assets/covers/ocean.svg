@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">海洋环流</title>
+  <desc id="desc">深色海洋、温暖洋流、船只与沿海城市构成的插画。</desc>
+  <rect width="1600" height="1000" fill="#0f3946"/>
+  <circle cx="1260" cy="187" r="112" fill="#e9d99b"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-80 287c280-92 519-54 734 24s488 89 1000-44" stroke="#6bb1b4" stroke-width="9"/>
+    <path d="M-70 374c282-100 513-45 762 35s494 99 968-27" stroke="#cf5a44" stroke-width="13"/>
+    <path d="M-60 469c283-94 507-43 735 31s494 107 977-20" stroke="#d5ddc9" stroke-width="5"/>
+    <path d="M-40 560c255-89 480-47 723 19s493 94 955-24" stroke="#6bb1b4" stroke-width="22" opacity=".8"/>
+    <path d="M-30 668c279-102 529-49 757 19s470 97 918-18" stroke="#cf5a44" stroke-width="7"/>
+    <path d="M-20 784c297-106 531-45 763 17s486 91 903-18" stroke="#d5ddc9" stroke-width="10" opacity=".65"/>
+  </g>
+  <g fill="#dfe7df">
+    <path d="M260 709h204l-21 49H280z"/>
+    <path d="M351 608h17v101h-17z"/>
+    <path d="m368 620 105 79H368z"/>
+  </g>
+  <path d="M971 687h236l-23 57H994z" fill="#f0bc54"/>
+  <path d="M1077 575h20v112h-20z" fill="#f0bc54"/>
+  <path d="m1097 588 118 91h-118z" fill="#f0bc54"/>
+  <path d="M0 873c131-72 238-56 347 4s210 72 340 7 220-72 343-5 213 74 348 9 160-40 222-27v139H0z" fill="#092631"/>
+  <g fill="#1b5260" stroke="#d5ddc9" stroke-width="3">
+    <path d="M170 824v-82h53v82zM242 824V680h73v144zM334 824v-110h59v110zM1081 824V713h62v111zM1165 824V648h89v176zM1271 824v-93h54v93z"/>
+  </g>
+  <g fill="#e9d99b">
+    <rect x="259" y="711" width="11" height="13"/>
+    <rect x="278" y="711" width="11" height="13"/>
+    <rect x="1182" y="681" width="15" height="19"/>
+    <rect x="1211" y="681" width="15" height="19"/>
+  </g>
+  <path d="M0 40h1600M0 56h1600" stroke="#f4f1e9" stroke-width="1" opacity=".3"/>
+</svg>
